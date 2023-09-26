@@ -1,0 +1,15 @@
+﻿.title {
+    padding-left: 32%;
+}
+
+#reportImg {
+    width: 500px;
+    height: 150px;
+}
+#subtitle{
+    color: gray;
+    padding-left: 18%;
+}
+#titleText{
+    padding-left: 7%;
+}
