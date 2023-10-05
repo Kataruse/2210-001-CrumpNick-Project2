@@ -23,7 +23,7 @@ namespace SortingAlgorithms
     /// 
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    internal class IterativeSort<T> : ISort<T> where T : IComparable<T>
+    internal class RecursiveSort<T> : ISort<T> where T : IComparable<T>
     {
         /// <summary>
         /// 

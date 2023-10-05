@@ -11,6 +11,8 @@
 //
 ///////////////////////////////////////////////////////////////////////////////
 
+using System.Diagnostics;
+
 namespace SortingAlgorithms
 {
     internal class Program
@@ -19,31 +21,23 @@ namespace SortingAlgorithms
         {
             var iterativeSort = new IterativeSort<int>();
             var dataLoader = new LoadData();
-            List<int> intData = dataLoader.ParseIntDataFile("AlmostInOrder_100.txt");
+            var dataWriter = new WriteData();
 
-            string dataString = "";
+            string fileName = "RandomOrder_100000.txt";
 
-            foreach(int item in intData)
-            {
-                dataString += item + ", ";
-            }
+            List<int> intData = dataLoader.ParseIntDataFile(fileName);
 
-            Console.WriteLine(dataString + "\n");
+            //List<string> bookData = dataLoader.ParseBookDataFile("AlmostInOrder_100.table.txt");
+            
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+            
+            iterativeSort.Sort(intData);
+            
+            stopWatch.Stop();
+            Console.WriteLine("RunTime " + stopWatch.ElapsedMilliseconds + " ms");
 
-
-            List<string> bookData = dataLoader.ParseBookDataFile("AlmostInOrder_100.table.txt");
-
-            dataString = "";
-
-            foreach (string item in bookData)
-            {
-                dataString += item + ", ";
-            }
-
-            Console.WriteLine(dataString);
-
-            //iterativeSort.Sort(data);
-            //recursiveSort.Sort(data);       
+            dataWriter.WriteDataFile(fileName,"Integer", "CocktailSort", stopWatch.ElapsedMilliseconds);
         }
     }
 }

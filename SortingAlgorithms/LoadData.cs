@@ -18,6 +18,7 @@ namespace SortingAlgorithms
         /// </summary>
         /// <param name="fileName">string of a fileName in the data file</param>
         /// <returns>list of integers created from parsing the individual string lines from the data file</returns>
+        /// /// <exception cref="FileLoadException">file could not be read or isn't in the correct format to be read</exception>
         public List<int> ParseIntDataFile(string fileName)
         {
             List<int> dataList = new List<int>();
