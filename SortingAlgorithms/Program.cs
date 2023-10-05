@@ -21,15 +21,47 @@ namespace SortingAlgorithms
         static void Main(string[] args)
         {
             //INTEGER SORTING BELOW
-            string fileName = "AlmostInOrder_10.txt";
-            IntegerSort(fileName);
-
+            string fileName = "";
+            //fileName = "AlmostInOrder_10.txt"; for(int i = 0; i < 6; i++) {IntegerSort(fileName);}
+            //fileName = "AlmostInOrder_100.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            //fileName = "AlmostInOrder_1000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            //fileName = "AlmostInOrder_10000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            //fileName = "InOrder_10.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            //fileName = "InOrder_100.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            //fileName = "InOrder_1000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            //  fileName = "InOrder_10000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            //fileName = "RandomOrder_10.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            //fileName = "RandomOrder_100.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            //fileName = "RandomOrder_1000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "RandomOrder_10000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "ReverseOrder_10.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "ReverseOrder_100.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "ReverseOrder_1000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "ReverseOrder_10000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
             //BOOK SORTING BELOW
-            fileName = "RandomOrder_10.table.txt";
-            BookSort(fileName);
-            
+            fileName = "RandomOrder_10.table.txt"; for (int i = 0; i < 6; i++){BookSort(fileName);}
+            fileName = "RandomOrder_100.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
+            fileName = "RandomOrder_1000.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
+            fileName = "RandomOrder_10000.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
+            fileName = "InOrder_10.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
+            fileName = "InOrder_100.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
+            fileName = "InOrder_1000.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
+            fileName = "InOrder_10000.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
+            fileName = "RandomOrder_10.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
+            fileName = "RandomOrder_100.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
+            fileName = "RandomOrder_1000.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
+            fileName = "RandomOrder_10000.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
+            fileName = "ReverseOrder_10.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
+            fileName = "ReverseOrder_100.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
+            fileName = "ReverseOrder_1000.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
+            fileName = "ReverseOrder_10000.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
+            //INTEGER 100,000 SORTING BELOW - THESE WILL TAKE UP TO 14 HOURS EACH LINE!!!
+            fileName = "AlmostInOrder_100000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "InOrder_100000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "RandomOrder_100000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "ReverseOrder_100000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
         }
-        
+
         /// <summary>
         /// Runs both Iterative and Recursive algorithms for integers for loging/testing purposes
         /// </summary>

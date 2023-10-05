@@ -53,8 +53,8 @@ namespace SortingAlgorithms
                 {
                     foreach (var i in stuff)
                     {
-                        if (i is Book bookItem)
-                        {
+                        if (i is Book bookItem) 
+                        { 
                             listBook.Add(bookItem);
                         }
                     }
@@ -82,7 +82,7 @@ namespace SortingAlgorithms
                 return;
             }
 
-            int num = stuff[left + (right - left) / 2];
+            int num = stuff[left];
 
             int i = left - 1;
             int j = right + 1;
@@ -109,7 +109,11 @@ namespace SortingAlgorithms
             QuickSort(stuff, left, j);
             QuickSort(stuff, j + 1, right);
 
-            Console.WriteLine("Complete");
+            foreach (var item in stuff)
+            {
+                Console.Write(stuff[item] + ", ");
+            }
+            Console.WriteLine();
         }
 
         public static void QuickSort(List<Book> stuff)
