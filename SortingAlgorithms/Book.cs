@@ -1,4 +1,17 @@
-﻿
+﻿///////////////////////////////////////////////////////////////////////////////
+//
+// Author: Nicholas Crump, CRUMPNA@etsu.edu
+//         Nicholas Trahan, TRAHANN@etsu.edu
+// Course: CSCI-2210-001 - Data Structures
+// Assignment: Project 2 - Sorting Algorithms
+// Description: This project is designed to be an exploration of sorting algorithms. Students are to determine
+// the effectiveness of different sorting algorithms depending on the data being sorted. Variables
+// of concern are the number of elements to sort, reference type vs value type, and O(n2) vs
+// O(Lg(n)) algorithmic runtimes.Additionally, students must demonstrate their ability to
+// experiment with data, collaborate with others, and present their findings.
+//
+///////////////////////////////////////////////////////////////////////////////
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -103,41 +116,33 @@ namespace SortingAlgorithms
         /// </summary>
         /// <param name="other">Next book in list</param>
         /// <returns>-1 if the book needs to be ordered or 1 if the book is in the correct spot</returns>
-        public int CompareTo(Book other)
+        public int CompareTo(Book other) 
         {
+            //-------------ChatGPT-------------
+            // Compare last names first
+            int lastNameComparison = string.Compare(AuthorLastName, other.AuthorLastName);
+            if (lastNameComparison != 0)
+            {
+                return lastNameComparison;
+            }
 
-            if (string.Compare(AuthorLastName, other.AuthorLastName) > 0)
+            // If last names are the same, compare first names
+            int firstNameComparison = string.Compare(AuthorFirstName, other.AuthorFirstName);
+            if (firstNameComparison != 0)
             {
-                return -1;
+                return firstNameComparison;
             }
-            else if (
-                string.Compare(AuthorLastName, other.AuthorLastName) == 0 &&
-                string.Compare(AuthorFirstName, other.AuthorFirstName) > 0
-                )
+
+            // If first names are the same, compare titles
+            int titleComparison = string.Compare(Title, other.Title);
+            if (titleComparison != 0)
             {
-                return -1;
+                return titleComparison;
             }
-            else if (
-                string.Compare(AuthorLastName, other.AuthorLastName) == 0 &&
-                string.Compare(AuthorFirstName, other.AuthorFirstName) == 0 &&
-                string.Compare(Title, other.Title) > 0
-                )
-            {
-                return -1;
-            }
-            else if (
-                string.Compare(AuthorLastName, other.AuthorLastName) == 0 &&
-                string.Compare(AuthorFirstName, other.AuthorFirstName) == 0 &&
-                string.Compare(Title, other.Title) == 0 &&
-                Date.CompareTo(other.Date) > 0
-                )
-            {
-                return -1;
-            }
-            else
-            {
-                return 1;
-            }
+
+            // If titles are the same, compare dates
+            return Date.CompareTo(other.Date);
+            //---------------------------------
         }
     }
 }

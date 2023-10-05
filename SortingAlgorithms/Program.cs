@@ -23,22 +23,11 @@ namespace SortingAlgorithms
             //INTEGER SORTING BELOW
             string fileName = "AlmostInOrder_10.txt";
             IntegerSort(fileName);
-            fileName = "AlmostInOrder_10.txt";
-            IntegerSort(fileName);
-            fileName = "AlmostInOrder_100.txt";
-            IntegerSort(fileName);
-            fileName = "AlmostInOrder_1000.txt";
-            IntegerSort(fileName);
-            fileName = "AlmostInOrder_10000.txt";
-            IntegerSort(fileName);
-            fileName = "AlmostInOrder_100000.txt";
-            IntegerSort(fileName);
 
             //BOOK SORTING BELOW
-            /*
-            fileName = "RandomOrder_100.table.txt";
+            fileName = "RandomOrder_10.table.txt";
             BookSort(fileName);
-            */
+            
         }
         
         /// <summary>
@@ -99,10 +88,9 @@ namespace SortingAlgorithms
             stopWatch.Stop();
             Console.WriteLine("RunTime " + stopWatch.ElapsedMilliseconds + " ms");
 
-            dataWriter.WriteDataFile(fileName, "Integer", "CocktailSort", stopWatch.ElapsedMilliseconds);
+            dataWriter.WriteDataFile(fileName, "Book", "CocktailSort", stopWatch.ElapsedMilliseconds);
 
             //START BOOK RECURSIVE SORT
-            /*
             stopWatch.Restart();
             stopWatch.Start();
 
@@ -111,8 +99,7 @@ namespace SortingAlgorithms
             stopWatch.Stop();
             Console.WriteLine("RunTime " + stopWatch.ElapsedMilliseconds + " ms");
 
-            dataWriter.WriteDataFile(fileName, "Integer", "CocktailSort", stopWatch.ElapsedMilliseconds);
-            */
+            dataWriter.WriteDataFile(fileName, "Book", "QuickSort", stopWatch.ElapsedMilliseconds);
         }
     }
 }
