@@ -13,3 +13,18 @@ C:\Users\nicka\Documents\College Documents\Classes\Fall 2023\CSCI 2210 - Data St
 C:\Users\nicka\Documents\College Documents\Classes\Fall 2023\CSCI 2210 - Data Structures\Projects\SortingAlgorithms\SortingAlgorithms\obj\Debug\net6.0\SortingAlgorithms.pdb
 C:\Users\nicka\Documents\College Documents\Classes\Fall 2023\CSCI 2210 - Data Structures\Projects\SortingAlgorithms\SortingAlgorithms\obj\Debug\net6.0\SortingAlgorithms.genruntimeconfig.cache
 C:\Users\nicka\Documents\College Documents\Classes\Fall 2023\CSCI 2210 - Data Structures\Projects\SortingAlgorithms\SortingAlgorithms\obj\Debug\net6.0\ref\SortingAlgorithms.dll
+C:\Users\nicka\OneDrive\Desktop\2210-001-Project2-SortingAlgorithms-main\SortingAlgorithms\bin\Debug\net6.0\SortingAlgorithms.exe
+C:\Users\nicka\OneDrive\Desktop\2210-001-Project2-SortingAlgorithms-main\SortingAlgorithms\bin\Debug\net6.0\SortingAlgorithms.deps.json
+C:\Users\nicka\OneDrive\Desktop\2210-001-Project2-SortingAlgorithms-main\SortingAlgorithms\bin\Debug\net6.0\SortingAlgorithms.runtimeconfig.json
+C:\Users\nicka\OneDrive\Desktop\2210-001-Project2-SortingAlgorithms-main\SortingAlgorithms\bin\Debug\net6.0\SortingAlgorithms.dll
+C:\Users\nicka\OneDrive\Desktop\2210-001-Project2-SortingAlgorithms-main\SortingAlgorithms\bin\Debug\net6.0\SortingAlgorithms.pdb
+C:\Users\nicka\OneDrive\Desktop\2210-001-Project2-SortingAlgorithms-main\SortingAlgorithms\obj\Debug\net6.0\SortingAlgorithms.csproj.AssemblyReference.cache
+C:\Users\nicka\OneDrive\Desktop\2210-001-Project2-SortingAlgorithms-main\SortingAlgorithms\obj\Debug\net6.0\SortingAlgorithms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicka\OneDrive\Desktop\2210-001-Project2-SortingAlgorithms-main\SortingAlgorithms\obj\Debug\net6.0\SortingAlgorithms.AssemblyInfoInputs.cache
+C:\Users\nicka\OneDrive\Desktop\2210-001-Project2-SortingAlgorithms-main\SortingAlgorithms\obj\Debug\net6.0\SortingAlgorithms.AssemblyInfo.cs
+C:\Users\nicka\OneDrive\Desktop\2210-001-Project2-SortingAlgorithms-main\SortingAlgorithms\obj\Debug\net6.0\SortingAlgorithms.csproj.CoreCompileInputs.cache
+C:\Users\nicka\OneDrive\Desktop\2210-001-Project2-SortingAlgorithms-main\SortingAlgorithms\obj\Debug\net6.0\SortingAlgorithms.dll
+C:\Users\nicka\OneDrive\Desktop\2210-001-Project2-SortingAlgorithms-main\SortingAlgorithms\obj\Debug\net6.0\refint\SortingAlgorithms.dll
+C:\Users\nicka\OneDrive\Desktop\2210-001-Project2-SortingAlgorithms-main\SortingAlgorithms\obj\Debug\net6.0\SortingAlgorithms.pdb
+C:\Users\nicka\OneDrive\Desktop\2210-001-Project2-SortingAlgorithms-main\SortingAlgorithms\obj\Debug\net6.0\SortingAlgorithms.genruntimeconfig.cache
+C:\Users\nicka\OneDrive\Desktop\2210-001-Project2-SortingAlgorithms-main\SortingAlgorithms\obj\Debug\net6.0\ref\SortingAlgorithms.dll

@@ -77,14 +77,6 @@ namespace SortingAlgorithms
 
             while (swapped == true)
             {
-                string dataString = "";
-
-                foreach (int item in data)
-                {
-                    dataString += item + "\n";
-                }
-
-                Console.WriteLine(dataString + "\n");
 
                 swapped = false;
                 for (int i = start; i < end - 1; ++i)
@@ -127,14 +119,6 @@ namespace SortingAlgorithms
 
             while (swapped == true)
             {
-                string dataString = "";
-
-                foreach (Book item in data)
-                {
-                    dataString += item.ToString() + "\n";
-                }
-
-                Console.WriteLine(dataString + "\n");
 
                 swapped = false;
                 for (int i = start; i < end - 1; ++i)

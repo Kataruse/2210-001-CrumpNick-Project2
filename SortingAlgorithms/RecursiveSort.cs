@@ -53,8 +53,8 @@ namespace SortingAlgorithms
                 {
                     foreach (var i in stuff)
                     {
-                        if (i is Book bookItem) 
-                        { 
+                        if (i is Book bookItem)
+                        {
                             listBook.Add(bookItem);
                         }
                     }
@@ -82,7 +82,7 @@ namespace SortingAlgorithms
                 return;
             }
 
-            int num = stuff[left];
+            int num = stuff[left + (right - left) / 2];
 
             int i = left - 1;
             int j = right + 1;
@@ -109,11 +109,6 @@ namespace SortingAlgorithms
             QuickSort(stuff, left, j);
             QuickSort(stuff, j + 1, right);
 
-            foreach (var item in stuff)
-            {
-                Console.Write(stuff[item] + ", ");
-            }
-            Console.WriteLine();
         }
 
         public static void QuickSort(List<Book> stuff)
@@ -128,7 +123,7 @@ namespace SortingAlgorithms
                 return;
             }
 
-            Book bookNum = stuff[left];
+            Book bookNum = stuff[left + (right - left) / 2];
 
             int i = left - 1;
             int j = right + 1;
@@ -156,12 +151,6 @@ namespace SortingAlgorithms
             QuickSort(stuff, left, j);
             QuickSort(stuff, j + 1, right);
 
-            foreach (var item in stuff)
-            {
-                Console.WriteLine();
-                Console.WriteLine(item.ToString());
-            }
-            Console.WriteLine();
         }
 
         static void Swap(List<int> stuff, int i, int j)
@@ -179,15 +168,10 @@ namespace SortingAlgorithms
             if (i == j)
                 return;
 
-            //Console.WriteLine($"Book 1 PreSwap is :\n {stuff[i].ToString()}");
-            //Console.WriteLine($"Book 2 PreSwap is :\n {stuff[j].ToString()}");
-
             Book temp = stuff[i];
             stuff[i] = stuff[j];
             stuff[j] = temp;
 
-            //Console.WriteLine($"Book 1 PostSwap is :\n {stuff[i].ToString()}");
-            //Console.WriteLine($"Book 2 PostSwap is :\n {stuff[j].ToString()}");
         }
     }
 }

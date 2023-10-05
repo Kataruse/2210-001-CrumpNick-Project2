@@ -22,24 +22,28 @@ namespace SortingAlgorithms
         {
             //INTEGER SORTING BELOW
             string fileName = "";
-            //fileName = "AlmostInOrder_10.txt"; for(int i = 0; i < 6; i++) {IntegerSort(fileName);}
-            //fileName = "AlmostInOrder_100.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
-            //fileName = "AlmostInOrder_1000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
-            //fileName = "AlmostInOrder_10000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
-            //fileName = "InOrder_10.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
-            //fileName = "InOrder_100.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
-            //fileName = "InOrder_1000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
-            //  fileName = "InOrder_10000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
-            //fileName = "RandomOrder_10.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
-            //fileName = "RandomOrder_100.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
-            //fileName = "RandomOrder_1000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "AlmostInOrder_10.txt"; for(int i = 0; i < 6; i++) {IntegerSort(fileName);}
+            fileName = "AlmostInOrder_100.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "AlmostInOrder_1000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "AlmostInOrder_10000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "AlmostInOrder_100000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "InOrder_10.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "InOrder_100.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "InOrder_1000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "InOrder_10000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "InOrder_100000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "RandomOrder_10.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "RandomOrder_100.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "RandomOrder_1000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
             fileName = "RandomOrder_10000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "RandomOrder_100000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
             fileName = "ReverseOrder_10.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
             fileName = "ReverseOrder_100.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
             fileName = "ReverseOrder_1000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
             fileName = "ReverseOrder_10000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            fileName = "ReverseOrder_100000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
             //BOOK SORTING BELOW
-            fileName = "RandomOrder_10.table.txt"; for (int i = 0; i < 6; i++){BookSort(fileName);}
+            fileName = "RandomOrder_10.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
             fileName = "RandomOrder_100.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
             fileName = "RandomOrder_1000.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
             fileName = "RandomOrder_10000.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
@@ -55,11 +59,7 @@ namespace SortingAlgorithms
             fileName = "ReverseOrder_100.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
             fileName = "ReverseOrder_1000.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
             fileName = "ReverseOrder_10000.table.txt"; for (int i = 0; i < 6; i++) { BookSort(fileName); }
-            //INTEGER 100,000 SORTING BELOW - THESE WILL TAKE UP TO 14 HOURS EACH LINE!!!
-            fileName = "AlmostInOrder_100000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
-            fileName = "InOrder_100000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
-            fileName = "RandomOrder_100000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
-            fileName = "ReverseOrder_100000.txt"; for (int i = 0; i < 6; i++) { IntegerSort(fileName); }
+            
         }
 
         /// <summary>
@@ -82,7 +82,6 @@ namespace SortingAlgorithms
             intIterativeSort.Sort(intData);
 
             stopWatch.Stop();
-            Console.WriteLine("RunTime " + stopWatch.ElapsedMilliseconds + " ms");
 
             dataWriter.WriteDataFile(fileName, "Integer", "CocktailSort", stopWatch.ElapsedMilliseconds);
 
@@ -93,7 +92,6 @@ namespace SortingAlgorithms
             intRecursiveSort.Sort(intData);
 
             stopWatch.Stop();
-            Console.WriteLine("RunTime " + stopWatch.ElapsedMilliseconds + " ms");
 
             dataWriter.WriteDataFile(fileName, "Integer", "QuickSort", stopWatch.ElapsedMilliseconds);
         }
@@ -118,7 +116,6 @@ namespace SortingAlgorithms
             bookIterativeSort.Sort(bookData);
 
             stopWatch.Stop();
-            Console.WriteLine("RunTime " + stopWatch.ElapsedMilliseconds + " ms");
 
             dataWriter.WriteDataFile(fileName, "Book", "CocktailSort", stopWatch.ElapsedMilliseconds);
 
@@ -129,7 +126,6 @@ namespace SortingAlgorithms
             bookRecursiveSort.Sort(bookData);
 
             stopWatch.Stop();
-            Console.WriteLine("RunTime " + stopWatch.ElapsedMilliseconds + " ms");
 
             dataWriter.WriteDataFile(fileName, "Book", "QuickSort", stopWatch.ElapsedMilliseconds);
         }
