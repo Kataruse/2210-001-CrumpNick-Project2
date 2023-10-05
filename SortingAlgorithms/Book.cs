@@ -24,7 +24,7 @@ namespace SortingAlgorithms
             Date = new DateOnly(1997, 6, 22);
         }
 
-        public Book(string title, string authorLastName, string authorFirstName, DateOnly date)
+        public Book(string authorLastName, string authorFirstName, string title, DateOnly date)
         {
             AuthorLastName = authorLastName;
             AuthorFirstName = authorFirstName;
@@ -76,25 +76,38 @@ namespace SortingAlgorithms
         public int CompareTo(Book other)
         {
 
-            if (
-                string.Compare(AuthorLastName, other.AuthorLastName) < 0 || 
-                string.Compare(AuthorFirstName, other.AuthorFirstName) < 0 ||
-                string.Compare(Title, other.Title) < 0 ||
-                Date.CompareTo(other.Date) < 0
+            if (string.Compare(AuthorLastName, other.AuthorLastName) > 0)
+            {
+                return -1;
+            }
+            else if (
+                string.Compare(AuthorLastName, other.AuthorLastName) == 0 &&
+                string.Compare(AuthorFirstName, other.AuthorFirstName) > 0
                 )
             {
                 return -1;
             }
             else if (
-                string.Compare(AuthorLastName, other.AuthorLastName) > 0 ||
-                string.Compare(AuthorFirstName, other.AuthorFirstName) > 0 ||
-                string.Compare(Title, other.Title) > 0 ||
+                string.Compare(AuthorLastName, other.AuthorLastName) == 0 &&
+                string.Compare(AuthorFirstName, other.AuthorFirstName) == 0 &&
+                string.Compare(Title, other.Title) > 0
+                )
+            {
+                return -1;
+            }
+            else if (
+                string.Compare(AuthorLastName, other.AuthorLastName) == 0 &&
+                string.Compare(AuthorFirstName, other.AuthorFirstName) == 0 &&
+                string.Compare(Title, other.Title) == 0 &&
                 Date.CompareTo(other.Date) > 0
                 )
             {
+                return -1;
+            }
+            else
+            {
                 return 1;
             }
-            return 0;
         }
     }
 }
