@@ -70,7 +70,7 @@ namespace SortingAlgorithms
         {
             bool swapped = true;
             int start = 0;
-            int end = data.Count - 1;
+            int end = data.Count;
 
             while (swapped == true)
             {

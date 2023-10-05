@@ -20,14 +20,15 @@ namespace SortingAlgorithms
         static void Main(string[] args)
         {
             var iterativeSort = new IterativeSort<int>();
+            var recursiveSort = new RecursiveSort<int>();
             var dataLoader = new LoadData();
             var dataWriter = new WriteData();
 
-            string fileName = "RandomOrder_100000.txt";
+            //Below is for Integersa
+            //START ITERATIVE SORT
+            string fileName = "RandomOrder_100.txt";
 
             List<int> intData = dataLoader.ParseIntDataFile(fileName);
-
-            //List<string> bookData = dataLoader.ParseBookDataFile("AlmostInOrder_100.table.txt");
             
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
@@ -38,6 +39,26 @@ namespace SortingAlgorithms
             Console.WriteLine("RunTime " + stopWatch.ElapsedMilliseconds + " ms");
 
             dataWriter.WriteDataFile(fileName,"Integer", "CocktailSort", stopWatch.ElapsedMilliseconds);
+
+            //START RECURSIVE SORT
+
+            stopWatch.Restart();
+            stopWatch.Start();
+
+            recursiveSort.Sort(intData);
+
+            stopWatch.Stop();
+            Console.WriteLine("RunTime " + stopWatch.ElapsedMilliseconds + " ms");
+
+            dataWriter.WriteDataFile(fileName, "Integer", "QuickSort", stopWatch.ElapsedMilliseconds);
+            
+
+            //Below is for Books
+            List<Book> bookData = dataLoader.ParseBookDataFile("AlmostInOrder_100.table.txt");
+            foreach (Book book in bookData)
+            {
+                Console.WriteLine(book.ToString());
+            }
         }
     }
 }

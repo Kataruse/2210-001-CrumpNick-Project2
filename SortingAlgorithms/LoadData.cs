@@ -58,9 +58,9 @@ namespace SortingAlgorithms
         /// </summary>
         /// <param name="fileName">string of a fileName in the data file</param>
         /// <returns>list of strings created from parsing the individual string lines from the data file</returns>
-        public List<string> ParseBookDataFile(string fileName)
+       public List<Book> ParseBookDataFile(string fileName)
         {
-            List<string> dataList = new List<string>();
+            List<Book> bookList = new List<Book>();
 
             try
             {
@@ -69,22 +69,18 @@ namespace SortingAlgorithms
                 rdr.ReadLine();
                 rdr.ReadLine();
                 rdr.ReadLine();
-                while (rdr.Peek() != -1)
+                while (rdr.Peek() == 124)
                 {
+                    var book = new Book();
                     string nextLine = rdr.ReadLine();
-                    string[] splitLine = nextLine.Split("|");
-                    foreach (string data in splitLine)
+                    if (book.TryParse(nextLine, out book))
                     {
-                        if (
-                            data != ""
-                           )
-                        dataList.Add(data.Trim());
+                        bookList.Add(book);
                     }
-                }
-                dataList.RemoveAt(dataList.Count - 1);
-                rdr.Close();
 
-                return dataList;
+                }
+                rdr.Close();
+                return bookList;
             }
             catch
             {
