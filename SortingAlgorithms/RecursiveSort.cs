@@ -15,6 +15,7 @@ using System;
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
@@ -35,7 +36,7 @@ namespace SortingAlgorithms
         public void Sort(List<T> stuff)
         {
             List<int> listInt = new List<int>();
-            List<string> listString = new List<string>();
+            List<Book> listBook = new List<Book>();
 
             try
             {
@@ -48,20 +49,21 @@ namespace SortingAlgorithms
             }
             catch
             {
-                /*try
+                try
                 {
-                    for (int i = 0; i < stuff.Count(); i++)
+                    foreach (var i in stuff)
                     {
-                        listString.Add(Convert.ToString(stuff[i]));
+                        if (i is Book bookItem) 
+                        { 
+                            listBook.Add(bookItem);
+                        }
                     }
-                    QuickSort(listString, 0, listString.Count() - 1);
+                    QuickSort(listBook, 0, listBook.Count() - 1);
                 }
                 catch
                 {
                     throw new InvalidCastException();
-                }*/
-
-                throw new NotSupportedException();
+                }
             }
         }
 
@@ -114,6 +116,54 @@ namespace SortingAlgorithms
             Console.WriteLine();
         }
 
+        public static void QuickSort(List<Book> stuff)
+        {
+            QuickSort(stuff, 0, stuff.Count - 1);
+        }
+
+        static void QuickSort(List<Book> stuff, int left, int right)
+        {
+            if (left >= right)
+            {
+                return;
+            }
+
+            Book bookNum = stuff[left];
+
+            int i = left - 1;
+            int j = right + 1;
+
+            while (true)
+            {
+                do
+                {
+                    i++;
+                } while (stuff[i].CompareTo(bookNum) < 0);
+
+                do
+                {
+                    j--;
+                } while (stuff[j].CompareTo(bookNum) > 0);
+
+
+                if (i >= j)
+                    break;
+
+                //Swap(stuff, i, j);
+                (stuff[i], stuff[j]) = (stuff[j], stuff[i]);
+            }
+
+            QuickSort(stuff, left, j);
+            QuickSort(stuff, j + 1, right);
+
+            foreach (var item in stuff)
+            {
+                Console.WriteLine();
+                Console.WriteLine(item.ToString());
+            }
+            Console.WriteLine();
+        }
+
         static void Swap(List<int> stuff, int i, int j)
         {
             if (i == j)
@@ -122,6 +172,22 @@ namespace SortingAlgorithms
             int temp = stuff[i];
             stuff[i] = stuff[j];
             stuff[j] = temp;
+        }
+
+        static void Swap(List<Book> stuff, int i, int j)
+        {
+            if (i == j)
+                return;
+
+            //Console.WriteLine($"Book 1 PreSwap is :\n {stuff[i].ToString()}");
+            //Console.WriteLine($"Book 2 PreSwap is :\n {stuff[j].ToString()}");
+
+            Book temp = stuff[i];
+            stuff[i] = stuff[j];
+            stuff[j] = temp;
+
+            //Console.WriteLine($"Book 1 PostSwap is :\n {stuff[i].ToString()}");
+            //Console.WriteLine($"Book 2 PostSwap is :\n {stuff[j].ToString()}");
         }
     }
 }
