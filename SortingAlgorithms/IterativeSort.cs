@@ -33,7 +33,7 @@ namespace SortingAlgorithms
         public void Sort(List<T> stuff)
         {
             List<int> intDataSet = new List<int>();
-            List<string> stringDataSet = new List<string>();
+            List<Book> BookDataSet = new List<Book>();
 
             try
             {
@@ -48,11 +48,14 @@ namespace SortingAlgorithms
             {
                 try
                 {
-                    for (int i = 0; i < stuff.Count; i++)
+                    foreach (var item in stuff)
                     {
-                        stringDataSet[i] = Convert.ToString(stuff[i]);
+                        if (item is Book bookItem)
+                        {
+                            BookDataSet.Add(bookItem);
+                        }
                     }
-                    //CocktailSort(stringDataSet);
+                    CocktailSort(BookDataSet);
                 }
                 catch
                 {
@@ -78,7 +81,7 @@ namespace SortingAlgorithms
 
                 foreach (int item in data)
                 {
-                    dataString += item + ", ";
+                    dataString += item + "\n";
                 }
 
                 Console.WriteLine(dataString + "\n");
@@ -116,9 +119,50 @@ namespace SortingAlgorithms
         /// sorts the entire list using cocktail sort to test the effectiveness of the algorithm
         /// </summary>
         /// <param name="data">list of Books to be sorted</param>
-        //private void CocktailSort(List<Book> data)
-        //{
-            //Book Sorting Here
-        //}
+        private void CocktailSort(List<Book> data)
+        {
+            bool swapped = true;
+            int start = 0;
+            int end = data.Count;
+
+            while (swapped == true)
+            {
+                string dataString = "";
+
+                foreach (Book item in data)
+                {
+                    dataString += item.ToString() + "\n";
+                }
+
+                Console.WriteLine(dataString + "\n");
+
+                swapped = false;
+                for (int i = start; i < end - 1; ++i)
+                {
+                    if (data[i].CompareTo(data[i+1]) == -1)
+                    {
+                        Book temp = data[i];
+                        data[i] = data[i + 1];
+                        data[i + 1] = temp;
+                        swapped = true;
+                    }
+                }
+                if (swapped == false)
+                    break;
+                swapped = false;
+                end = end - 1;
+                for (int i = end - 1; i >= start; i--)
+                {
+                    if (data[i].CompareTo(data[i + 1]) == -1)
+                    {
+                        Book temp = data[i];
+                        data[i] = data[i + 1];
+                        data[i + 1] = temp;
+                        swapped = true;
+                    }
+                }
+                start = start + 1;
+            }
+        }
     }
 }

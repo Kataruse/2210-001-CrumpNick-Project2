@@ -1,6 +1,7 @@
 ﻿///////////////////////////////////////////////////////////////////////////////
 //
 // Author: Nicholas Crump, CRUMPNA@etsu.edu
+//         Nicholas Trahan, TRAHANN@etsu.edu
 // Course: CSCI-2210-001 - Data Structures
 // Assignment: Project 2 - Sorting Algorithms
 // Description: This project is designed to be an exploration of sorting algorithms. Students are to determine
@@ -19,46 +20,99 @@ namespace SortingAlgorithms
     {
         static void Main(string[] args)
         {
-            var iterativeSort = new IterativeSort<int>();
-            var recursiveSort = new RecursiveSort<int>();
+            //INTEGER SORTING BELOW
+            string fileName = "AlmostInOrder_10.txt";
+            IntegerSort(fileName);
+            fileName = "AlmostInOrder_10.txt";
+            IntegerSort(fileName);
+            fileName = "AlmostInOrder_100.txt";
+            IntegerSort(fileName);
+            fileName = "AlmostInOrder_1000.txt";
+            IntegerSort(fileName);
+            fileName = "AlmostInOrder_10000.txt";
+            IntegerSort(fileName);
+            fileName = "AlmostInOrder_100000.txt";
+            IntegerSort(fileName);
+
+            //BOOK SORTING BELOW
+            /*
+            fileName = "RandomOrder_100.table.txt";
+            BookSort(fileName);
+            */
+        }
+        
+        /// <summary>
+        /// Runs both Iterative and Recursive algorithms for integers for loging/testing purposes
+        /// </summary>
+        /// <param name="fileName">file to be accessed to pull data from</param>
+        static void IntegerSort(string fileName)
+        {
+            var intIterativeSort = new IterativeSort<int>();
+            var intRecursiveSort = new RecursiveSort<int>();
             var dataLoader = new LoadData();
             var dataWriter = new WriteData();
-
-            //Below is for Integersa
-            //START ITERATIVE SORT
-            string fileName = "RandomOrder_100.txt";
-
-            List<int> intData = dataLoader.ParseIntDataFile(fileName);
-            
             Stopwatch stopWatch = new Stopwatch();
-            stopWatch.Start();
-            
-            iterativeSort.Sort(intData);
-            
-            stopWatch.Stop();
-            Console.WriteLine("RunTime " + stopWatch.ElapsedMilliseconds + " ms");
+            List<int> intData = dataLoader.ParseIntDataFile(fileName);
 
-            dataWriter.WriteDataFile(fileName,"Integer", "CocktailSort", stopWatch.ElapsedMilliseconds);
-
-            //START RECURSIVE SORT
-
+            //START INTEGER ITERATIVE SORT
             stopWatch.Restart();
             stopWatch.Start();
 
-            recursiveSort.Sort(intData);
+            intIterativeSort.Sort(intData);
+
+            stopWatch.Stop();
+            Console.WriteLine("RunTime " + stopWatch.ElapsedMilliseconds + " ms");
+
+            dataWriter.WriteDataFile(fileName, "Integer", "CocktailSort", stopWatch.ElapsedMilliseconds);
+
+            //START INTEGER RECURSIVE SORT
+            stopWatch.Restart();
+            stopWatch.Start();
+
+            intRecursiveSort.Sort(intData);
 
             stopWatch.Stop();
             Console.WriteLine("RunTime " + stopWatch.ElapsedMilliseconds + " ms");
 
             dataWriter.WriteDataFile(fileName, "Integer", "QuickSort", stopWatch.ElapsedMilliseconds);
-            
+        }
 
-            //Below is for Books
-            List<Book> bookData = dataLoader.ParseBookDataFile("AlmostInOrder_100.table.txt");
-            foreach (Book book in bookData)
-            {
-                Console.WriteLine(book.ToString());
-            }
+        /// <summary>
+        /// Runs both Iterative and Recursive algorithms for Books for loging/testing purposes
+        /// </summary>
+        /// <param name="fileName">file to be accessed to pull data from</param>
+        static void BookSort(string fileName)
+        {
+            var bookIterativeSort = new IterativeSort<Book>();
+            var bookRecursiveSort = new RecursiveSort<Book>();
+            var dataLoader = new LoadData();
+            var dataWriter = new WriteData();
+            Stopwatch stopWatch = new Stopwatch();
+            List<Book> bookData = dataLoader.ParseBookDataFile(fileName);
+
+            //START BOOK ITERATIVE SORT
+            stopWatch.Restart();
+            stopWatch.Start();
+
+            bookIterativeSort.Sort(bookData);
+
+            stopWatch.Stop();
+            Console.WriteLine("RunTime " + stopWatch.ElapsedMilliseconds + " ms");
+
+            dataWriter.WriteDataFile(fileName, "Integer", "CocktailSort", stopWatch.ElapsedMilliseconds);
+
+            //START BOOK RECURSIVE SORT
+            /*
+            stopWatch.Restart();
+            stopWatch.Start();
+
+            bookRecursiveSort.Sort(bookData);
+
+            stopWatch.Stop();
+            Console.WriteLine("RunTime " + stopWatch.ElapsedMilliseconds + " ms");
+
+            dataWriter.WriteDataFile(fileName, "Integer", "CocktailSort", stopWatch.ElapsedMilliseconds);
+            */
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿///////////////////////////////////////////////////////////////////////////////
 //
-// Author: Nicholas Crump, CRUMPNA@etsu.edu
+// Author: Nicholas Trahan, TRAHANN@etsu.edu
 // Course: CSCI-2210-001 - Data Structures
 // Assignment: Project 2 - Sorting Algorithms
 // Description: This project is designed to be an exploration of sorting algorithms. Students are to determine
