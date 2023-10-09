@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nicka\\OneDrive\\Desktop\\2210-001-Project2-SortingAlgorithms-main\\SortingAlgorithms\\SortingAlgorithms.csproj",
+      "projectUniqueName": "C:\\Users\\nicka\\Documents\\College Documents\\Classes\\Fall 2023\\CSCI 2210 - Data Structures\\Projects\\SortingAlgorithms\\SortingAlgorithms\\SortingAlgorithms.csproj",
       "projectName": "SortingAlgorithms",
-      "projectPath": "C:\\Users\\nicka\\OneDrive\\Desktop\\2210-001-Project2-SortingAlgorithms-main\\SortingAlgorithms\\SortingAlgorithms.csproj",
+      "projectPath": "C:\\Users\\nicka\\Documents\\College Documents\\Classes\\Fall 2023\\CSCI 2210 - Data Structures\\Projects\\SortingAlgorithms\\SortingAlgorithms\\SortingAlgorithms.csproj",
       "packagesPath": "C:\\Users\\nicka\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nicka\\OneDrive\\Desktop\\2210-001-Project2-SortingAlgorithms-main\\SortingAlgorithms\\obj\\",
+      "outputPath": "C:\\Users\\nicka\\Documents\\College Documents\\Classes\\Fall 2023\\CSCI 2210 - Data Structures\\Projects\\SortingAlgorithms\\SortingAlgorithms\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nicka\\AppData\\Roaming\\NuGet\\NuGet.Config",

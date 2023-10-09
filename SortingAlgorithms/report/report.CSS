@@ -9,18 +9,36 @@
     experiment with data, collaborate with others, and present their findings.
 */
 
-.title {
-    padding-left: 32%;
+.content {
+    padding-top: 96px;
+    padding-left: 96px;
+    padding-right: 96px;
+    line-height: 2;
+}
+
+.report {
+    text-align: left;
+}
+
+.header {
+    text-align: center;
+}
+
+.bottomP {
+    text-align: center;
+}
+
+.images {
+    padding: 15px;
+    text-align: center;
+}
+
+#pageNum {
+    text-align: right;
 }
 
 #reportImg {
     width: 500px;
     height: 150px;
-}
-#subtitle{
-    color: gray;
-    padding-left: 18%;
-}
-#titleText{
-    padding-left: 7%;
+    padding-left: 31%;
 }
