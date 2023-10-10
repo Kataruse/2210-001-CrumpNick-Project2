@@ -24,15 +24,15 @@ using System.Threading.Tasks;
 namespace SortingAlgorithms
 {
     /// <summary>
-    /// 
+    /// Sorts the test data
     /// </summary>
     /// <typeparam name="T"></typeparam>
     internal class RecursiveSort<T> : ISort<T> where T : IComparable<T>
     {
         /// <summary>
-        /// 
+        /// Sorts by calling QuickSort
         /// </summary>
-        /// <param name="stuff"></param>
+        /// <param name="stuff">List of T</param>
         public void Sort(List<T> stuff)
         {
             List<int> listInt = new List<int>();
@@ -70,11 +70,22 @@ namespace SortingAlgorithms
 
 
         //https://codereview.stackexchange.com/questions/142808/quick-sort-algorithm
+
+        /// <summary>
+        /// Sets up QuickSort (INT) to be used Recursivly
+        /// </summary>
+        /// <param name="stuff">Int List</param>
         public static void QuickSort(List<int> stuff)
         {
             QuickSort(stuff, 0, stuff.Count - 1);
         }
 
+        /// <summary>
+        /// Quickly Sorts the Int Data by iterating through it by different pivot points
+        /// </summary>
+        /// <param name="stuff">Int List</param>
+        /// <param name="left">Left Pivot Point</param>
+        /// <param name="right">Pivot Point</param>
         static void QuickSort(List<int> stuff, int left, int right)
         {
             if (left >= right)
@@ -116,6 +127,12 @@ namespace SortingAlgorithms
             QuickSort(stuff, 0, stuff.Count - 1);
         }
 
+        /// <summary>
+        /// Quickly Sorts the Book Data by iterating through it by different pivot points
+        /// </summary>
+        /// <param name="stuff">Book List</param>
+        /// <param name="left">Left Pivot Point</param>
+        /// <param name="right">Pivot Point</param>
         static void QuickSort(List<Book> stuff, int left, int right)
         {
             if (left >= right)
@@ -153,6 +170,12 @@ namespace SortingAlgorithms
 
         }
 
+        /// <summary>
+        /// Swaps the two data points
+        /// </summary>
+        /// <param name="stuff">Int List</param>
+        /// <param name="i">First Item</param>
+        /// <param name="j">Second Item</param>
         static void Swap(List<int> stuff, int i, int j)
         {
             if (i == j)
@@ -163,6 +186,13 @@ namespace SortingAlgorithms
             stuff[j] = temp;
         }
 
+
+        /// <summary>
+        /// Swaps the two data points
+        /// </summary>
+        /// <param name="stuff">Book List</param>
+        /// <param name="i">First Item</param>
+        /// <param name="j">Second Item</param>
         static void Swap(List<Book> stuff, int i, int j)
         {
             if (i == j)
